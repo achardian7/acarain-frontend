@@ -9,6 +9,11 @@ interface CustomSession extends Session {
   accessToken?: string;
 }
 
+export interface ApiError {
+  message: string;
+  data: null;
+}
+
 const headers = {
   'Content-Type': 'application/json',
 };
