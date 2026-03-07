@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import AuthLayout from '@/components/layouts/auth-layout';
+import RegisterSuccess from '@/components/pages/register-success/register-success';
 
 export const metadata: Metadata = {
   title: 'Acarain | Register Success',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 const RegisterSuccessPage = () => {
   return (
     <AuthLayout>
-      <h1>Register Success</h1>
+      <RegisterSuccess />
     </AuthLayout>
   );
 };

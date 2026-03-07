@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
 import { ApiError } from '@/libs/axios/instance';
-import authService from '@/services/auth';
+import authService from '@/services/auth.service';
 import { IRegister } from '@/types/auth';
 
 export const registerSchema = z
