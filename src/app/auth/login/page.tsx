@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { Metadata } from 'next';
 
 import AuthLayout from '@/components/layouts/auth-layout';
@@ -10,7 +12,9 @@ export const metadata: Metadata = {
 const LoginPage = () => {
   return (
     <AuthLayout>
-      <Login />
+      <Suspense fallback={null}>
+        <Login />
+      </Suspense>
     </AuthLayout>
   );
 };
