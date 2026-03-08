@@ -46,9 +46,8 @@ export const useLogin = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const callbackUrl = searchParams.get('callbackUrl') ?? '/';
-
   const loginService = async (payload: LoginInput) => {
+    const callbackUrl = searchParams.get('callbackUrl') ?? '/';
     const result = await signIn('credentials', {
       ...payload,
       redirect: false,
@@ -68,6 +67,7 @@ export const useLogin = () => {
       });
     },
     onSuccess: () => {
+      const callbackUrl = searchParams.get('callbackUrl') ?? '/';
       router.push(callbackUrl);
       reset();
     },
