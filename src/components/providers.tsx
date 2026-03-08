@@ -4,6 +4,8 @@
 import { HeroUIProvider } from '@heroui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+import { SessionProvider } from 'next-auth/react';
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -19,8 +21,10 @@ export const queryClient = new QueryClient({
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <HeroUIProvider>{children}</HeroUIProvider>
-    </QueryClientProvider>
+    <SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <HeroUIProvider>{children}</HeroUIProvider>
+      </QueryClientProvider>
+    </SessionProvider>
   );
 }
