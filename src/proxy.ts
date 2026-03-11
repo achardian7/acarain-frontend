@@ -42,7 +42,7 @@ export async function proxy(request: NextRequest) {
       return NextResponse.redirect(url);
     }
 
-    if (token.user?.role !== 'user') {
+    if (token.user?.role !== 'member') {
       return NextResponse.redirect(new URL('/', request.url));
     }
   }

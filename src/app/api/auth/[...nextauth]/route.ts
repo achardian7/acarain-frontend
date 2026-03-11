@@ -36,6 +36,7 @@ const config: AuthOptions = {
         const result = await authService.login({ identifier, password });
 
         const accessToken = result.data.data;
+        console.log(accessToken);
 
         const me = await authService.getProfileWithToken(accessToken);
 
@@ -43,7 +44,7 @@ const config: AuthOptions = {
 
         if (
           accessToken &&
-          result.status === 200 &&
+          result.status === 201 &&
           user._id &&
           me.status === 200
         ) {
